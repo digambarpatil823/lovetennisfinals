@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Love Tennis Finals | Tennis Finals History</title>
+
+    <meta name="description"
+          content="Love Tennis Finals celebrates tennis Grand Slam finals — past, present and future. Explore tennis finals, champions, runners-up and scores.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                radial-gradient(circle at top, #17395f 0%, #07111f 55%, #030811 100%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .tennis-ball {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 82px);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: clamp(18px, 3vw, 26px);
+            color: #cbd8e8;
+            margin-bottom: 35px;
+        }
+
+        .youtube-button {
+            display: inline-block;
+            background: #ff0000;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .youtube-button:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            margin: 0 auto 45px;
+            text-align: center;
+            color: #b9c7d8;
+            font-size: 18px;
+        }
+
+        /* ABOUT */
+        .about-box {
+            background: #0d1c2f;
+            border: 1px solid #1d3958;
+            border-radius: 14px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .about-box p {
+            color: #cbd8e8;
+            font-size: 18px;
+        }
+
+        /* GRAND SLAMS */
+        .grand-slams {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .slam-card {
+            background: #0d1c2f;
+            border: 1px solid #1d3958;
+            border-radius: 14px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .slam-card:hover {
+            transform: translateY(-5px);
+            border-color: #4f8dcc;
+        }
+
+        .slam-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .slam-card p {
+            color: #aebed0;
+            font-size: 15px;
+        }
+
+        .available {
+            color: #66d18f !important;
+            font-weight: bold;
+        }
+
+        .coming {
+            color: #f3c969 !important;
+            font-weight: bold;
+        }
+
+        /* YOUTUBE */
+        .youtube-section {
+            text-align: center;
+            background: #0a1727;
+            max-width: none;
+        }
+
+        .youtube-section .inner {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .youtube-section p {
+            color: #b9c7d8;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* FUTURE APP */
+        .future-box {
+            background: linear-gradient(135deg, #102a46, #0d1c2f);
+            border: 1px solid #28547d;
+            border-radius: 16px;
+            padding: 45px 30px;
+            text-align: center;
+        }
+
+        .future-box h3 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .future-box p {
+            color: #c5d3e2;
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #030811;
+            color: #8192a7;
+            border-top: 1px solid #16283d;
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+            .grand-slams {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            section {
+                padding: 60px 18px;
+            }
+
+            .grand-slams {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: 1px;
+            }
+
+            .about-box,
+            .future-box {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+
+            <div class="tennis-ball">🎾</div>
+
+            <h1>Love Tennis Finals</h1>
+
+            <p>
+                Celebrating tennis finals — past, present &amp; future.
+            </p>
+
+            <a
+                class="youtube-button"
+                href="https://www.youtube.com/@lovetennisfinals"
+                target="_blank"
+                rel="noopener noreferrer">
+                ▶ Visit Our YouTube Channel
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2>About Love Tennis Finals</h2>
+
+        <p class="section-intro">
+            A place for tennis fans who love the biggest matches,
+            unforgettable finals and the history behind Grand Slam champions.
+        </p>
+
+        <div class="about-box">
+
+            <p>
+                Love Tennis Finals is dedicated to documenting and celebrating
+                tennis finals from across generations. From legendary matches
+                of the past to today's biggest Grand Slam moments, our goal is
+                to make tennis final history easy and enjoyable to explore.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- GRAND SLAMS -->
+    <section id="grand-slams">
+
+        <h2>Grand Slam Finals</h2>
+
+        <p class="section-intro">
+            Exploring the history of the world's biggest tennis tournaments,
+            one final at a time.
+        </p>
+
+        <div class="grand-slams">
+
+            <div class="slam-card">
+                <h3>🇺🇸 US Open</h3>
+                <p class="available">
+                    1968 → Present
+                </p>
+                <p>
+                    Women's Singles finals and more tennis history coming soon.
+                </p>
+            </div>
+
+            <div class="slam-card">
+                <h3>🇦🇺 Australian Open</h3>
+                <p class="coming">
+                    Coming Soon
+                </p>
+                <p>
+                    Exploring Australian Open final history.
+                </p>
+            </div>
+
+            <div class="slam-card">
+                <h3>🇫🇷 French Open</h3>
+                <p class="coming">
+                    Coming Soon
+                </p>
+                <p>
+                    Exploring Roland-Garros final history.
+                </p>
+            </div>
+
+            <div class="slam-card">
+                <h3>🇬🇧 Wimbledon</h3>
+                <p class="coming">
+                    Coming Soon
+                </p>
+                <p>
+                    Exploring Wimbledon final history.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- YOUTUBE -->
+    <section class="youtube-section">
+
+        <div class="inner">
+
+            <h2>Latest From YouTube</h2>
+
+            <p>
+                Watch our latest tennis finals videos, match moments,
+                champions and Grand Slam history on Love Tennis Finals.
+            </p>
+
+            <a
+                class="youtube-button"
+                href="https://www.youtube.com/@lovetennisfinals"
+                target="_blank"
+                rel="noopener noreferrer">
+                🎾 Watch Love Tennis Finals
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FUTURE WEB APP -->
+    <section id="future">
+
+        <h2>Coming Soon</h2>
+
+        <div class="future-box">
+
+            <h3>Love Tennis Finals Web App 🚀</h3>
+
+            <p>
+                Our future goal is to build a searchable tennis finals database
+                covering tournaments, players, champions, runners-up, final
+                scores and statistics — making tennis final history easier
+                for everyone to explore.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <strong>Love Tennis Finals</strong>.
+            Celebrating the history of tennis finals. 🎾
+        </p>
+
+    </footer>
+
+</body>
+</html>
