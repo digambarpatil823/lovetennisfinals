@@ -598,6 +598,105 @@
             margin-bottom: 5px;
         }
 
+
+        /* =========================
+           SUPPORT
+        ========================= */
+
+        .support-section {
+            background: #fffdf7;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .support-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 42px;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .support-card h2 {
+            margin-bottom: 10px;
+        }
+
+        .support-card p {
+            color: var(--muted);
+            max-width: 700px;
+        }
+
+        .support-note {
+            margin-top: 12px;
+            font-size: 12px;
+            color: #7a817d;
+        }
+
+        .qr-box {
+            text-align: center;
+            min-width: 190px;
+        }
+
+        .qr-box img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 8px;
+            background: white;
+        }
+
+        .qr-caption {
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+
+        .upi-id {
+            margin-top: 5px;
+            font-size: 12px;
+            color: var(--muted);
+            word-break: break-all;
+        }
+
+        .slam-link {
+            display: block;
+            color: inherit;
+        }
+
+        .slam-link:focus-visible {
+            outline: 3px solid rgba(217, 169, 40, 0.45);
+            outline-offset: 4px;
+            border-radius: 18px;
+        }
+
+        .nav-links a.active {
+            color: var(--green);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
         /* =========================
            MOBILE
         ========================= */
@@ -656,6 +755,15 @@
                 padding: 35px 28px;
             }
 
+            .support-card {
+                grid-template-columns: 1fr;
+                padding: 30px;
+            }
+
+            .qr-box {
+                margin: 0 auto;
+            }
+
             .future-card::after {
                 right: 15px;
                 bottom: -30px;
@@ -681,13 +789,14 @@
 
             <div class="nav-links">
 
-                <a href="#about">About</a>
+                <a href="#about" data-section="about">About</a>
 
-                <a href="#grand-slams">Grand Slams</a>
+                <a href="#grand-slams" data-section="grand-slams">Grand Slams</a>
 
-                <a href="#youtube">YouTube</a>
+                <a href="#youtube" data-section="youtube">YouTube</a>
 
-                <a href="#future">Web App</a>
+                <a href="#future" data-section="future">Web App</a>
+                <a href="#support" data-section="support">Support</a>
 
             </div>
 
@@ -844,29 +953,31 @@
 
                 <!-- US OPEN -->
 
-                <div class="slam-card">
+                <a href="us-open.html" class="slam-link">
+                    <div class="slam-card">
 
-                    <div class="slam-number">
-                        01
+                        <div class="slam-number">
+                            01
+                        </div>
+
+                        <div class="slam-icon">
+                            🇺🇸
+                        </div>
+
+                        <h3>
+                            US Open
+                        </h3>
+
+                        <p>
+                            Women’s Singles finals from 1968 to the present.
+                        </p>
+
+                        <span class="slam-status">
+                            Explore Finals →
+                        </span>
+
                     </div>
-
-                    <div class="slam-icon">
-                        🇺🇸
-                    </div>
-
-                    <h3>
-                        US Open
-                    </h3>
-
-                    <p>
-                        Women’s Singles finals from 1968 to the present.
-                    </p>
-
-                    <span class="slam-status">
-                        In Progress
-                    </span>
-
-                </div>
+                </a>
 
 
                 <!-- AUSTRALIAN OPEN -->
@@ -1001,6 +1112,61 @@
 
 
     <!-- =========================
+         SUPPORT
+    ========================== -->
+
+    <section id="support" class="support-section">
+
+        <div class="container">
+
+            <div class="support-card">
+
+                <div>
+                    <div class="section-label">
+                        Support Love Tennis Finals
+                    </div>
+
+                    <h2>
+                        Help keep the archive growing.
+                    </h2>
+
+                    <p>
+                        Love Tennis Finals is being built independently.
+                        If you enjoy the videos and tennis archive, you can
+                        voluntarily contribute toward domain, hosting,
+                        development and content-maintenance costs.
+                    </p>
+
+                    <p class="support-note">
+                        This is voluntary support, not a charitable donation.
+                        No tax-deductible donation receipt is provided.
+                    </p>
+                </div>
+
+                <div class="qr-box">
+                    <img
+                        src="images/upi-qr.png"
+                        alt="UPI QR code to support Love Tennis Finals"
+                        loading="lazy"
+                    >
+
+                    <div class="qr-caption">
+                        Scan to support
+                    </div>
+
+                    <div class="upi-id">
+                        UPI: digambarpatil823-6@okaxis
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
          FUTURE WEB APP
     ========================== -->
 
@@ -1073,11 +1239,46 @@
             Celebrating tennis finals — past, present & future.
         </p>
 
-        <p style="margin-top: 8px;">
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#grand-slams">Grand Slams</a>
+            <a href="#youtube">YouTube</a>
+            <a href="#support">Support</a>
+            <a href="#future">Web App</a>
+        </div>
+
+        <p style="margin-top: 15px;">
             © 2026 Love Tennis Finals. All rights reserved.
         </p>
 
     </footer>
+
+
+    <script>
+        const navLinks = document.querySelectorAll(".nav-links a[data-section]");
+        const sections = [...document.querySelectorAll("section[id]")];
+
+        const setActiveNav = () => {
+            const scrollPosition = window.scrollY + 140;
+            let current = "";
+
+            sections.forEach(section => {
+                if (scrollPosition >= section.offsetTop) {
+                    current = section.id;
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.toggle(
+                    "active",
+                    link.dataset.section === current
+                );
+            });
+        };
+
+        window.addEventListener("scroll", setActiveNav);
+        window.addEventListener("load", setActiveNav);
+    </script>
 
 </body>
 </html>
